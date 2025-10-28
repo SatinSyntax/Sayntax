@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sayntax — Speak with Clarity, Write with Confidence</title>
+  <title>Sayntax — Speak with Clarity, Write with Grace</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
     <h1 class="brand">Sayntax <span class="heart">💜</span></h1>
-    <p class="tagline">Speak with clarity. Write with confidence.</p>
+    <p class="tagline">Speak with Clarity, Write with Grace.</p>
+    <p class="intro">
+      Sayntax helps you refine grammar and pronunciation through a friendly, Pinterest-inspired interface.
+      Whether you're writing or speaking, Sayntax makes your words accurate, elegant, and easy to express.
+    </p>
   </header>
 
   <main class="wrap">
@@ -22,9 +26,9 @@
         <button id="clearBtn" class="btn ghost">Reset</button>
       </div>
 
-      <!-- 🐾 Runner husky below toolbar -->
+      <!-- Runner husky around toolbar -->
       <div id="huskyRunner" class="husky-runner hidden" aria-hidden="true">
-        <!-- Cartoon running husky SVG -->
+        <!-- Cartoon husky SVG -->
         <svg viewBox="0 0 128 128" width="56" height="56" aria-hidden="true">
           <defs><linearGradient id="fuzz" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe4ff"/><stop offset="1" stop-color="#f7f8ff"/></linearGradient></defs>
           <path d="M22 36c0-14 10-26 20-26 6 0 10 6 12 12l4 10-16 14z" fill="#6b7280"/>
@@ -42,13 +46,12 @@
         </svg>
       </div>
 
-      <!-- Editor area -->
+      <!-- Editor -->
       <div class="editor-area">
-        <textarea id="editor" placeholder="Type here… The husky will pop up and wiggle while you type."></textarea>
+        <textarea id="editor" placeholder="Type here… the husky will cheer you on."></textarea>
 
-        <!-- 🐾 Typing husky -->
+        <!-- Typing husky -->
         <div id="husky" class="husky hidden" aria-hidden="true">
-          <!-- Cartoon husky SVG -->
           <svg viewBox="0 0 128 128" width="56" height="56" aria-hidden="true">
             <defs><linearGradient id="fuzz2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe4ff"/><stop offset="1" stop-color="#f7f8ff"/></linearGradient></defs>
             <path d="M22 36c0-14 10-26 20-26 6 0 10 6 12 12l4 10-16 14z" fill="#6b7280"/>
@@ -68,12 +71,12 @@
         </div>
       </div>
 
-      <!-- Suggestions -->
+      <!-- Inline suggestions -->
       <div id="suggestions" class="suggestions hidden"></div>
     </section>
   </main>
 
-  <!-- Result dialog -->
+  <!-- Dialog -->
   <dialog id="resultDialog" class="result-dialog">
     <form method="dialog">
       <h3>What went wrong & how to improve</h3>
