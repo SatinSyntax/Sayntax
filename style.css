@@ -169,4 +169,44 @@ textarea#editor:focus{ outline:2px solid rgba(139,92,246,.45); }
   margin: 2rem auto 3rem;     /* <— centers the box */
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
+/* Fullscreen, device-safe hero */
+.hero-full{
+  position: relative;
+  min-height: 100svh;                 /* fits iOS/Android correctly */
+  background: var(--hero) center / cover no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+/* Soft veil for readability over any image */
+.hero-overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,.35),
+    rgba(255,255,255,.55)
+  );
+}
+
+.hero-title{
+  position: relative;
+  text-align: center;
+  color: #1f2937;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+}
+.hero-title h1{
+  margin: 0 0 .35rem;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: 800;
+}
+.hero-title p{
+  margin: 0;
+  font-weight: 600;
+  opacity: .9;
+}
+
+/* Give the section below a little breathing room after the hero */
+.content-box{ margin-top: 2rem; }
 
