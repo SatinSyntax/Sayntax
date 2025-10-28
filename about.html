@@ -61,7 +61,17 @@
     <p>Speak with Clarity, Write with Grace.</p>
   </div>
 </section>
-  <section class="content-box">
+  /* About card — taller, still tidy on desktop */
+.content-box{
+  background:#fff;
+  padding:2rem;
+  border-radius:18px;
+  width:min(92vw, 900px);
+  max-height: min(82vh, 900px);   /* ⬅️ was ~70vh; now taller */
+  overflow:auto;                   /* scrolls inside if very long */
+  margin: 2rem auto 3rem;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
     <h1>About</h1>
     <p>
       Sayntax helps you refine grammar and pronunciation through a friendly, Pinterest-inspired interface.
