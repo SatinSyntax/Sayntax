@@ -1,56 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sayntaxx</title>
+<section class="hero hero-christian">
+  <div class="hero__overlay"></div>
 
-  <!-- Use RELATIVE paths (no leading /) -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo.png" />
-  <meta name="description" content="Sayntaxx — Speak with Clarity, Write with Grace" />
-</head>
-<body>
-  <script>
-    // If video can't play or user prefers reduced motion, use image fallback
-    (function () {
-      var v = document.createElement('video');
-      if (!v || !v.canPlayType || !v.canPlayType('video/mp4') ||
-          (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-        document.documentElement.classList.add('no-video');
-      }
-    })();
-  </script>
-
-  <!-- HERO: Background video with image fallback -->
-  <section class="hero">
-    <video class="hero__video" autoplay muted loop playsinline poster="images/bg.jpg">
-      <source src="media/bg.mp4" type="video/mp4" />
-    </video>
-
-    <div class="hero__overlay"></div>
-
-    <div class="hero__content">
-      <img class="hero__logo" src="images/logo.png" alt="Sayntaxx Logo" />
-      <h1>Sayntaxx</h1>
-      <p>Your grammar & pronunciation sidekick.</p>
-      <a class="btn" href="#start">Get Started</a>
-    </div>
-  </section>
-
-  <main id="start" class="container">
-    <h2>Welcome</h2>
-    <p>If you can read this, your assets are loading and paths are correct.</p>
-  </main>
-
-  <script>
-    // Nudge iOS to resume video when tab becomes visible again
-    const vid = document.querySelector('.hero__video');
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && vid && vid.paused && !document.documentElement.classList.contains('no-video')) {
-        vid.play().catch(() => {});
-      }
-    });
-  </script>
-</body>
-</html>
+  <div class="hero__content">
+    <img class="hero__logo" src="images/logo.png" alt="Sayntaxx Logo" />
+    
+    <h1>Sayntaxx</h1>
+    
+    <p class="tagline">Speak with Clarity, Write with Grace ✨</p>
+    
+    <a class="btn" href="#start">Begin the Journey</a>
+  </div>
+</section>
