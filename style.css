@@ -250,4 +250,21 @@ textarea#editor:focus{ outline:2px solid rgba(139,92,246,.45); }
   background:#334155; margin-left:2px; animation: blink .85s steps(2,end) infinite;
 }
 @keyframes blink { 0%,100%{opacity:0} 50%{opacity:1} }
+/* Center the <dialog> perfectly on all screens */
+.result-dialog{
+  position: fixed;        /* overrides UA positioning */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;              /* remove default margins */
+  max-width: 700px;
+  width: min(92vw, 700px);
+  background:#fff;
+  border: 0;
+  border-radius: 16px;
+  padding: 0;
+}
+.result-dialog::backdrop{
+  background: rgba(0,0,0,.45);
+}
 
