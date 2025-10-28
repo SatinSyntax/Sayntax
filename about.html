@@ -8,6 +8,47 @@
 </head>
 <body class="page-light">
   <nav class="topnav">
+    <section class="content-box typewriter-wrap">
+  <h1 class="tw" data-speed="18">About Sayntax</h1>
+  <p class="tw" data-speed="14">
+    Sayntax helps you refine grammar and pronunciation through a friendly, Pinterest-inspired interface.
+  </p>
+  <p class="tw" data-speed="14">
+    Whether you're writing or speaking, Sayntax makes your words accurate, elegant, and easy to express.
+  </p>
+  <p class="tw" data-speed="12">
+    Tagline: Speak with Clarity, Write with Grace.
+  </p>
+</section>
+
+<!-- Typewriter script (inline, page-only) -->
+<script>
+(function(){
+  const blocks = Array.from(document.querySelectorAll('.tw'));
+  const baseDelay = 25; // pause between blocks
+  function type(el, cb){
+    const speed = +el.dataset.speed || 16;
+    const full = el.textContent;
+    el.textContent = '';
+    el.classList.add('typing');
+    let i = 0; const caret = document.createElement('span'); caret.className='caret'; el.appendChild(caret);
+    const timer = setInterval(()=>{
+      el.insertBefore(document.createTextNode(full.charAt(i)), caret);
+      i++;
+      if(i >= full.length){
+        clearInterval(timer);
+        el.classList.remove('typing');
+        caret.remove();
+        setTimeout(cb, baseDelay*12);
+      }
+    }, speed);
+  }
+  (function run(n){
+    if(n >= blocks.length) return;
+    type(blocks[n], ()=> run(n+1));
+  })(0);
+})();
+</script>
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
     <a href="app.html">Use Sayntax</a>
