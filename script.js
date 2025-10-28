@@ -168,3 +168,27 @@ editor.addEventListener('keyup', ()=>{
   clearTimeout(t);
   t = setTimeout(()=> { if (!busy) runCheck(false); }, 600);
 });
+// === Runner Husky (follows cursor over toolbar) ===
+const huskyRunner = document.getElementById('huskyRunner');
+const toolbar = document.querySelector('.toolbar');
+
+// show the runner when the user types (uses your existing editor)
+editor.addEventListener('input', () => {
+  huskyRunner.classList.remove('hidden');
+});
+
+// follow the mouse over the toolbar
+toolbar.addEventListener('mousemove', (e) => {
+  const rect = toolbar.getBoundingClientRect();
+  const x = e.clientX - rect.left - 25; // center the 50px image
+  const y = e.clientY - rect.top - 25;
+  huskyRunner.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// hide it gently when leaving toolbar (if editor is empty)
+toolbar.addEventListener('mouseleave', () => {
+  setTimeout(() => {
+    if (!editor.value.trim()) huskyRunner.classList.add('hidden');
+  }, 800);
+});
+
