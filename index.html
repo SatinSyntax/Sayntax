@@ -14,6 +14,7 @@
 
   <main class="wrap">
     <section class="editor-card">
+      <!-- Toolbar (buttons) -->
       <div class="toolbar">
         <button id="checkBtn" class="btn primary">Polish It</button>
         <button id="fixAllBtn" class="btn">Auto-Fix</button>
@@ -21,10 +22,16 @@
         <button id="clearBtn" class="btn ghost">Reset</button>
       </div>
 
+      <!-- 🐾 NEW: runner husky that chases the cursor around the toolbar -->
+      <div id="huskyRunner" class="husky-runner hidden" aria-hidden="true">
+        <img src="images/husky.png" alt="Husky assistant" />
+      </div>
+
+      <!-- Editor -->
       <div class="editor-area">
         <textarea id="editor" placeholder="Type here… The husky will pop up and wiggle while you type."></textarea>
 
-        <!-- Husky assistant -->
+        <!-- Existing pop-up husky -->
         <div id="husky" class="husky hidden" aria-hidden="true">
           <img src="images/husky.png" alt="Sayntax Husky Assistant" />
           <div class="husky-bubble">I'm watching your words 🐾</div>
