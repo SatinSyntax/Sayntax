@@ -133,3 +133,40 @@ textarea#editor:focus{ outline:2px solid rgba(139,92,246,.45); }
 
 /* Footer */
 .site-footer{ padding:1.2rem 1.25rem; text-align:center; color:#3c4157 }
+/* Layout fixes for About page */
+.page-light{
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fbc2eb);
+  display: flex;
+  flex-direction: column;
+}
+
+.topnav{
+  display: flex;
+  justify-content: center;   /* center the nav */
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  position: sticky; top: 0;  /* optional: keeps nav visible */
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+.topnav a{
+  text-decoration: none;
+  color: #334155;
+  font-weight: 700;
+  padding: .45rem .7rem;
+  border-radius: 10px;
+}
+.topnav a.active{ background: #ffffffaa; }
+
+/* Center the content card */
+.content-box{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  max-width: 800px;
+  width: min(92vw, 800px);
+  margin: 2rem auto 3rem;     /* <— centers the box */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
