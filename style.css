@@ -1,106 +1,145 @@
+/* ----- Light pastel theme: turquoise + pink ----- */
 :root{
-  --bg:#0f0f14; --card:#171827; --ink:#eaeaf2; --muted:#aeb0c4;
-  --accent:#8b5cf6; --accent-2:#22d3ee; --danger:#ff6b6b;
+  --bg1:#a8edea;   /* turquoise */
+  --bg2:#fbc2eb;   /* pink */
+  --paper:#ffffff;
+  --ink:#202124;
+  --muted:#596275;
+  --accent:#8b5cf6;
+  --accent2:#22d3ee;
+  --border:#e8eaf1;
+  --softshadow: 0 10px 30px rgba(240,150,220,.25), 0 8px 18px rgba(120,220,220,.25);
 }
-*{box-sizing:border-box} html,body{height:100%}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);}
 
-.site-header{padding:2rem 1.25rem;text-align:center;background:
-  linear-gradient(135deg, rgba(139,92,246,.25), rgba(34,211,238,.15));}
-.brand{margin:0;font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800}
-.heart{filter:drop-shadow(0 0 12px rgba(139,92,246,.6))}
-.tagline{margin:.25rem 0 0;color:var(--muted)}
+/* Page background: soft gradient */
+html,body{height:100%}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--ink);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  background-attachment: fixed;
+}
 
-.wrap{max-width:1000px;margin:1.5rem auto;padding:0 1.25rem}
-.editor-card{background:var(--card);border-radius:18px;box-shadow:0 12px 28px rgba(0,0,0,.25);padding:1rem}
+/* Header hero */
+.site-header{
+  text-align:center;
+  padding: 2.4rem 1.25rem 1.8rem;
+  color:#111;
+}
+.brand{
+  margin:0;
+  font-size:clamp(2rem, 6vw, 3rem);
+  font-weight:900;
+  letter-spacing:.2px;
+}
+.heart{ filter: drop-shadow(0 0 10px rgba(139,92,246,.4)); }
+.tagline{
+  margin:.4rem 0 .6rem;
+  font-size:clamp(1.05rem, 2.5vw, 1.25rem);
+  font-weight:700;
+}
+.intro{
+  margin:0 auto;
+  max-width:900px;
+  font-size:clamp(.98rem, 2.1vw, 1.05rem);
+  color:#333;
+  opacity:.95;
+}
 
-.toolbar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.75rem}
-.btn{border:0;border-radius:999px;padding:.7rem 1rem;background:#24263a;color:var(--ink);cursor:pointer;transition:transform .1s,opacity .1s}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));}
-.btn.ghost{background:transparent;outline:1px solid #3a3c55}
+/* Layout */
+.wrap{max-width:1000px;margin:1.2rem auto 3rem;padding:0 1.25rem}
 
-.editor-area{position:relative}
+/* Editor card on white paper with soft shadows */
+.editor-card{
+  position:relative;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1rem;
+  box-shadow: var(--softshadow);
+}
+
+/* Toolbar */
+.toolbar{ display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:.75rem; position:relative; }
+.btn{
+  border:0; border-radius:999px; padding:.7rem 1rem; cursor:pointer;
+  background:#f3f5ff; color:#1f2440; font-weight:700;
+  transition: transform .1s, box-shadow .15s, opacity .15s;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn.primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff;
+  box-shadow: 0 10px 24px rgba(139,92,246,.35);
+}
+.btn.ghost{
+  background:transparent; color:#374151; outline:1px solid #d8def0;
+}
+
+/* Editor area */
+.editor-area{ position:relative; }
 textarea#editor{
-  width:100%;min-height:220px;resize:vertical;border:0;border-radius:14px;
-  padding:1rem 1.1rem 3.5rem;background:#0f1020;color:var(--ink);font-size:1rem;line-height:1.6;
-  outline:2px solid transparent;outline-offset:0;transition:outline .15s ease;
+  width:100%; min-height:220px; resize:vertical;
+  border:1px solid var(--border); border-radius:16px;
+  padding:1rem 1.1rem 3.6rem;
+  background:#ffffff; color:#111; font-size:1rem; line-height:1.6;
+  outline:2px solid transparent; transition:outline .15s ease, box-shadow .15s ease;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
 }
-textarea#editor:focus{outline:2px solid rgba(139,92,246,.8)}
+textarea#editor:focus{ outline:2px solid rgba(139,92,246,.55); }
 
-.husky{position:absolute;right:12px;bottom:10px;display:flex;align-items:flex-end;gap:.5rem}
-.husky img{width:54px;height:54px;object-fit:contain;animation: wiggle 1.3s ease-in-out infinite}
-.husky-bubble{background:#1e2033;padding:.45rem .6rem;border-radius:10px;font-size:.9rem;color:var(--muted);box-shadow:0 8px 18px rgba(0,0,0,.2)}
-.hidden{display:none}
+/* Typing husky bubble (light cloud) */
+.husky{
+  position:absolute; right:12px; bottom:10px;
+  background: linear-gradient(135deg, #ffffffcc, #f1f9ffcc);
+  padding: 10px 12px; border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+.husky-bubble{ color:#4b5563; font-size:.9rem; margin-top:.25rem; }
+
+/* Runner husky (over toolbar) with light aura */
+.husky-runner{
+  position:absolute; width:52px; height:52px; pointer-events:none; z-index:2000;
+  transition: transform .2s ease, opacity .2s ease; opacity: 0;
+  background: linear-gradient(135deg, #ffffffcc, #ffeefdcc);
+  padding:4px; border-radius: 50%;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+.husky-runner.hidden{opacity:0}
+.husky-runner svg{ animation: runHusky .6s ease-in-out infinite; }
+.husky svg{ animation: wiggle 1.3s ease-in-out infinite; }
+
 @keyframes wiggle{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(-2deg)}}
+@keyframes runHusky{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
 
-.suggestions{margin-top:.8rem;background:#121327;border:1px solid #2a2c45;border-radius:12px;padding:.6rem;max-height:240px;overflow:auto}
-.suggestion-item{padding:.45rem .55rem;border-radius:8px}
+/* Suggestions panel (light) */
+.suggestions{
+  margin-top:.8rem; background:#fff;
+  border:1px solid var(--border); border-radius:14px; padding:.6rem;
+  max-height:240px; overflow:auto; color:#111;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+}
+.suggestion-item{padding:.45rem .55rem; border-radius:10px}
 .suggestion-item + .suggestion-item{margin-top:.25rem}
-.suggestion-item b{color:#fff}
-.suggestion-item small{color:var(--muted)}
+.suggestion-item small{color:#6b7280}
 .suggestion-actions{display:flex;gap:.4rem;margin-top:.35rem}
-.inline-btn{padding:.35rem .6rem;border-radius:8px;border:0;cursor:pointer;background:#2a2c45;color:#e5e7f0}
-.inline-btn.apply{background:linear-gradient(135deg,var(--accent),var(--accent-2));}
+.inline-btn{padding:.35rem .6rem;border-radius:8px;border:0;cursor:pointer;background:#eef2ff;color:#1f2440}
+.inline-btn.apply{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
 
-.result-dialog{border:0;border-radius:16px;padding:0;color:#111;max-width:700px;width:min(92vw,700px)}
-.result-dialog::backdrop{background:rgba(0,0,0,.6)}
+/* Result dialog (light) */
+.result-dialog{border:0;border-radius:16px;padding:0;color:#111;max-width:700px;width:min(92vw,700px);background:#fff}
+.result-dialog::backdrop{background:rgba(0,0,0,.35)}
 .result-dialog form{padding:1rem 1rem 1.2rem}
-.result-dialog h3{margin:.25rem 0  .5rem;color:#000}
+.result-dialog h3{margin:.25rem 0 .6rem;color:#111}
 #issues{max-height:60vh;overflow:auto}
-.issue{background:#f8f9ff;border:1px solid #e6e8ff;color:#111;border-radius:10px;padding:.6rem .7rem;margin:.4rem 0}
+.issue{background:#f8faff;border:1px solid #e6ecff;border-radius:12px;padding:.6rem .7rem;margin:.45rem 0}
 .issue .bad{color:#b42323;font-weight:700}
 .issue .good{color:#175cd3;font-weight:700}
 
-.site-footer{padding:1.2rem 1.25rem;color:#9aa0b8;text-align:center}
-/* --- Husky Runner (around buttons) --- */
-.husky-runner{
-  position:absolute;
-  width:50px;height:50px;
-  pointer-events:none;
-  transition:transform .2s ease, opacity .2s ease;
-  z-index:2000; opacity:1;
-}
-.husky-runner.hidden{opacity:0}
-.husky-runner img{
-  width:100%;height:100%;
-  animation:runHusky .6s steps(4) infinite;
-}
-@keyframes runHusky{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-4px)}
-  100%{transform:translateY(0)}
-}
-
-/* make toolbar a positioning context so the runner can “live” over it */
-.toolbar{ position:relative; }
-/* make mascot read as ‘cartoon’ */
-.husky img, .husky-runner img {
-  image-rendering: auto;
-  filter: drop-shadow(0 6px 16px rgba(0,0,0,.28));
-}
-.husky img { width: 56px; height: 56px; }
-.husky-runner { width: 52px; height: 52px; }
-/* Soft background cloud behind typing husky */
-.husky {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: linear-gradient(135deg, #ffffffcc, #e7f0ffcc);
-  padding: 12px;
-  border-radius: 20px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 6px 18px rgba(255,255,255,0.3),
-              0 4px 14px rgba(0,0,0,0.25);
-}
-
-/* Soft background cloud behind running husky */
-.husky-runner {
-  background: linear-gradient(135deg, #ffffffcc, #eff7ffcc);
-  padding: 4px;
-  border-radius: 50%;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 6px 16px rgba(255,255,255,0.25),
-              0 3px 10px rgba(0,0,0,0.25);
-}
-
+/* Footer */
+.site-footer{padding:1.2rem 1.25rem;text-align:center;color:#3c4157}
