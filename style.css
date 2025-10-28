@@ -209,4 +209,13 @@ textarea#editor:focus{ outline:2px solid rgba(139,92,246,.45); }
 
 /* Give the section below a little breathing room after the hero */
 .content-box{ margin-top: 2rem; }
+/* Home: full-screen fixed hero image */
+.hero-center{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  /* Image first; gradient fallback if no image set */
+  background: var(--home, linear-gradient(135deg,#a8edea,#fbc2eb)) center / cover fixed no-repeat;
+}
 
