@@ -1,26 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sayntax</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sayntax — Speak with Clarity, Write with Grace</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+<body class="page-light">
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="app.html" class="active">Use Sayntax</a>
+  </nav>
 
-<body class="hero-center">
+  <header class="site-header">
+    <h1 class="brand">Sayntax <span class="heart">💜</span></h1>
+    <p class="tagline">Speak with Clarity, Write with Grace.</p>
+    <p class="intro">
+      Sayntax checks your grammar, suggests graceful improvements, and reads your writing aloud — with a cute husky cheering you on.
+    </p>
+  </header>
 
-<div class="logo-box">
-  <img src="logo.png" alt="Sayntax Logo" class="logo-img" />
+  <main class="wrap">
+    <section class="editor-card">
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <button id="checkBtn" class="btn primary">Polish It</button>
+        <button id="fixAllBtn" class="btn">Auto-Fix</button>
+        <button id="listenBtn" class="btn">Read Aloud</button>
+        <button id="clearBtn" class="btn ghost">Reset</button>
+      </div>
 
-  <p class="landing-tagline">
-    Speak with Clarity, Write with Grace.
-  </p>
+      <!-- Runner husky (follows cursor around toolbar) -->
+      <div id="huskyRunner" class="husky-runner hidden" aria-hidden="true">
+        <!-- Cartoon husky SVG -->
+        <svg viewBox="0 0 128 128" width="56" height="56" aria-hidden="true">
+          <defs><linearGradient id="fuzz" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe4ff"/><stop offset="1" stop-color="#f7f8ff"/></linearGradient></defs>
+          <path d="M22 36c0-14 10-26 20-26 6 0 10 6 12 12l4 10-16 14z" fill="#6b7280"/>
+          <path d="M106 36c0-14-10-26-20-26-6 0-10 6-12 12l-4 10 16 14z" fill="#6b7280"/>
+          <circle cx="64" cy="68" r="44" fill="#9ca3af"/>
+          <circle cx="64" cy="78" r="34" fill="url(#fuzz)"/>
+          <path d="M44 60c6-8 16-12 20-12s14 4 20 12c-4 8-12 14-20 14s-16-6-20-14z" fill="#fff" opacity=".7"/>
+          <circle cx="50" cy="76" r="6" fill="#1f2937"/>
+          <circle cx="78" cy="76" r="6" fill="#1f2937"/>
+          <circle cx="52" cy="74" r="2" fill="#fff"/>
+          <circle cx="80" cy="74" r="2" fill="#fff"/>
+          <ellipse cx="64" cy="92" rx="8" ry="6" fill="#111827"/>
+          <path d="M64 92v6" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+          <path d="M56 98c4 3 12 3 16 0" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
 
-  <div class="landing-buttons">
-    <a href="app.html" class="btn primary">Enter</a>
-    <a href="about.html" class="btn ghost">About</a>
-  </div>
-</div>
+      <!-- Editor -->
+      <div class="editor-area">
+        <textarea id="editor" placeholder="Type here… the husky will cheer you on."></textarea>
 
+        <!-- Typing husky -->
+        <div id="husky" class="husky hidden" aria-hidden="true">
+          <svg viewBox="0 0 128 128" width="56" height="56" aria-hidden="true">
+            <defs><linearGradient id="fuzz2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe4ff"/><stop offset="1" stop-color="#f7f8ff"/></linearGradient></defs>
+            <path d="M22 36c0-14 10-26 20-26 6 0 10 6 12 12l-16 24z" fill="#6b7280" opacity=".9"/>
+            <path d="M106 36c0-14-10-26-20-26-6 0-10 6-12 12l16 24z" fill="#6b7280" opacity=".9"/>
+            <circle cx="64" cy="68" r="44" fill="#9ca3af"/>
+            <circle cx="64" cy="78" r="34" fill="url(#fuzz2)"/>
+            <path d="M44 60c6-8 16-12 20-12s14 4 20 12c-4 8-12 14-20 14s-16-6-20-14z" fill="#fff" opacity=".7"/>
+            <circle cx="50" cy="76" r="6" fill="#1f2937"/>
+            <circle cx="78" cy="76" r="6" fill="#1f2937"/>
+            <circle cx="52" cy="74" r="2" fill="#fff"/>
+            <circle cx="80" cy="74" r="2" fill="#fff"/>
+            <ellipse cx="64" cy="92" rx="8" ry="6" fill="#111827"/>
+            <path d="M64 92v6" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+            <path d="M56 98c4 3 12 3 16 0" stroke="#111827" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div class="husky-bubble">I'm watching your words 🐾</div>
+        </div>
+      </div>
+
+      <!-- Suggestions -->
+      <div id="suggestions" class="suggestions hidden"></div>
+    </section>
+  </main>
+
+  <!-- Dialog -->
+  <dialog id="resultDialog" class="result-dialog">
+    <form method="dialog">
+      <h3>What went wrong & how to improve</h3>
+      <div id="issues"></div>
+      <menu>
+        <button value="close" class="btn primary">Got it</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <small>© 2025 Sayntax. MIT for now. Be kind, write well.</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
