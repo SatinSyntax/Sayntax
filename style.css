@@ -218,4 +218,36 @@ textarea#editor:focus{ outline:2px solid rgba(139,92,246,.45); }
   /* Image first; gradient fallback if no image set */
   background: var(--home, linear-gradient(135deg,#a8edea,#fbc2eb)) center / cover fixed no-repeat;
 }
+/* Center About card nicely & keep it from feeling like an essay */
+.page-light{
+  min-height: 100vh;
+  background: linear-gradient(135deg,#a8edea,#fbc2eb);
+  display: flex;
+  flex-direction: column;
+}
+.topnav{
+  display:flex; justify-content:center; gap:1rem; padding:1rem 1.25rem;
+  position: sticky; top: 0; backdrop-filter: saturate(120%) blur(6px);
+}
+.topnav a{ text-decoration:none; color:#334155; font-weight:700; padding:.45rem .7rem; border-radius:10px; }
+.topnav a.active{ background:#ffffffaa; }
+
+/* The “essay” becomes a neat, centered card with internal scroll if needed */
+.content-box{
+  background:#fff; padding:2rem; border-radius:18px;
+  width:min(92vw, 820px);
+  max-height: min(70vh, 680px);   /* keeps it compact on desktop */
+  overflow:auto;                   /* scroll INSIDE the card when long */
+  margin: 2rem auto 3rem; box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+/* Typewriter look */
+.typewriter-wrap .typing,
+.typewriter-wrap .tw { white-space: pre-wrap; }
+.typewriter-wrap h1{ margin-top:0; font-weight:800; }
+.typewriter-wrap .caret{
+  display:inline-block; width:2px; height:1em; vertical-align:-.2em;
+  background:#334155; margin-left:2px; animation: blink .85s steps(2,end) infinite;
+}
+@keyframes blink { 0%,100%{opacity:0} 50%{opacity:1} }
 
