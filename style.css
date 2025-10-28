@@ -81,4 +81,26 @@ textarea#editor:focus{outline:2px solid rgba(139,92,246,.8)}
 }
 .husky img { width: 56px; height: 56px; }
 .husky-runner { width: 52px; height: 52px; }
+/* Soft background cloud behind typing husky */
+.husky {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ffffffcc, #e7f0ffcc);
+  padding: 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(255,255,255,0.3),
+              0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* Soft background cloud behind running husky */
+.husky-runner {
+  background: linear-gradient(135deg, #ffffffcc, #eff7ffcc);
+  padding: 4px;
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 16px rgba(255,255,255,0.25),
+              0 3px 10px rgba(0,0,0,0.25);
+}
 
