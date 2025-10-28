@@ -74,4 +74,11 @@ textarea#editor:focus{outline:2px solid rgba(139,92,246,.8)}
 
 /* make toolbar a positioning context so the runner can “live” over it */
 .toolbar{ position:relative; }
+/* make mascot read as ‘cartoon’ */
+.husky img, .husky-runner img {
+  image-rendering: auto;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,.28));
+}
+.husky img { width: 56px; height: 56px; }
+.husky-runner { width: 52px; height: 52px; }
 
