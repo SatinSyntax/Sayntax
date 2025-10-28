@@ -3,34 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Syntax</title>
-  <meta name="description" content="Syntax — Write with Grace, Speak with Clarity.">
+  <title>Sayntax — Speak with Clarity, Write with Confidence</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <section class="hero hero-gradient">
-    <div class="hero__content">
-      <h1 class="brand">
-        <span class="brand__name">Syntax</span>
-        <span class="brand__heart" aria-label="purple heart" role="img">💜</span>
-      </h1>
+  <header class="site-header">
+    <h1 class="brand">Sayntax <span class="heart">💜</span></h1>
+    <p class="tagline">Speak with clarity. Write with confidence.</p>
+  </header>
 
-      <p class="tagline">Speak with clarity. Write with confidence.</p>
+  <main class="wrap">
+    <section class="editor-card">
+      <div class="toolbar">
+        <button id="checkBtn" class="btn primary">Polish It</button>
+        <button id="fixAllBtn" class="btn">Auto-Fix</button>
+        <button id="listenBtn" class="btn">Read Aloud</button>
+        <button id="clearBtn" class="btn ghost">Reset</button>
+      </div>
 
-      <p class="subtext">
-        Syntax helps users refine their grammar and pronunciation through a friendly, Pinterest-inspired interface.
-        Whether you're writing or speaking, Syntax makes your words accurate, elegant, and easy to express.
-      </p>
+      <div class="editor-area">
+        <textarea id="editor" placeholder="Type here… The husky will pop up and wiggle while you type."></textarea>
 
-      <a class="btn" href="#start">Get started</a>
-    </div>
-  </section>
+        <!-- Husky assistant -->
+        <div id="husky" class="husky hidden" aria-hidden="true">
+          <img src="images/husky.png" alt="Sayntax Husky Assistant" />
+          <div class="husky-bubble">I'm watching your words 🐾</div>
+        </div>
+      </div>
 
-  <main id="start" class="container">
-    <h2>Welcome</h2>
-    <p>This is your new site. You can add pages and features over time — I’ll guide you.</p>
+      <!-- Inline suggestions panel -->
+      <div id="suggestions" class="suggestions hidden"></div>
+    </section>
   </main>
+
+  <!-- Result dialog -->
+  <dialog id="resultDialog" class="result-dialog">
+    <form method="dialog">
+      <h3>What went wrong & how to improve</h3>
+      <div id="issues"></div>
+      <menu>
+        <button value="close" class="btn primary">Got it</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <small>© 2025 Sayntax. MIT for now. Be kind, write well.</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
