@@ -19,4 +19,4 @@ HTML • CSS • JavaScript • LanguageTool API
 
 ---
 
-Made with 💜 by [Your Name]
+Made with 💜 by Evangelene.
