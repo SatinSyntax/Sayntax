@@ -1,5 +1,5 @@
 # Sayntax 💜
-Speak with clarity. Write with confidence.
+Write with Grace, Speak with Clarity.
 
 **Sayntax** helps users refine their grammar and pronunciation through a friendly, lilac-inspired interface. Whether you’re writing or speaking, Sayntax makes your words accurate, elegant, and easy to express.
 
