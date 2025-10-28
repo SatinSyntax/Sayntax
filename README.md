@@ -10,7 +10,7 @@ Speak with clarity. Write with confidence.
 - 100% free and browser-based  
 
 ## 🚀 How to Use
-1. Visit the website (or open `index.html` locally).  
+1. Visit the website (https://satinsyntax.github.io/Sayntax/).  
 2. Type text into the Grammar or Pronunciation box.  
 3. Click **Check Grammar** or **Speak**.  
 
